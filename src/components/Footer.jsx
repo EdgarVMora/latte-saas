@@ -1,4 +1,5 @@
 import React from 'react';
+import { GiftIcon } from '@heroicons/react/24/outline';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,17 +33,18 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo y descripción */}
           <div className="col-span-1">
-            <div className="flex items-center">
-              <img
-                className="h-8 w-auto"
-                src="/logo.svg"
-                alt="Latte"
-              />
-              <span className="ml-2 text-xl font-semibold text-gray-900">Latte</span>
+            <div className="flex items-center group">
+              <div className="relative">
+                <div className="absolute -inset-1 bg-green-500/20 rounded-lg blur-lg group-hover:bg-green-500/30 transition-all duration-300 group-hover:scale-110"></div>
+                <div className="relative flex items-center">
+                  <GiftIcon className="h-8 w-8 text-green-500 transform transition-transform group-hover:rotate-12 duration-300" />
+                  <span className="ml-2 text-xl font-bold tracking-wider text-gray-900 group-hover:text-green-500 transition-colors duration-300">REWARDS</span>
+                </div>
+              </div>
             </div>
             <p className="mt-4 text-sm text-gray-500">
               Transformando la manera en que las empresas recompensan a sus clientes.
@@ -74,7 +76,7 @@ const Footer = () => {
         {/* Derechos de autor y redes sociales */}
         <div className="mt-12 border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            © {currentYear} Latte. Todos los derechos reservados.
+            © {currentYear} REWARDS. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-gray-500">
@@ -96,4 +98,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
