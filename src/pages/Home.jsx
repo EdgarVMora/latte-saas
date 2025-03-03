@@ -42,12 +42,12 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gray-50 py-20 sm:py-32">
+      <section id="hero" className="relative overflow-hidden bg-gray-50 py-20 sm:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1.7fr] gap-12 items-center">
             {/* Lado izquierdo - Texto principal */}
             <div className="space-y-8">
-              <h1 className="text-6xl font-bold leading-tight text-gray-900 font-[Poppins]">
+              <h1 className="text-6xl font-bold leading-tight text-gray-900 font-[Poppins] text-center">
                 Recompensas que{' '}
                 <span className="text-green-500">transforman</span> la lealtad
               </h1>
@@ -58,7 +58,7 @@ const Home = () => {
                 <button className="px-8 py-4 bg-green-500 text-white rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg hover:shadow-green-500/25">
                   Comienza Gratis
                 </button>
-                <button className="px-8 py-4 border border-gray-300 text-gray-700 rounded-lg text-lg font-semibold hover:bg-gray-200 transition-colors duration-300">
+                <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md text-base font-semibold hover:bg-gray-200 transition-colors duration-300">
                   Ver Demo
                 </button>
               </div>
@@ -69,7 +69,7 @@ const Home = () => {
               <img
                 src={starAndGift}
                 alt="Dashboard de Recompensas"
-                className="block w-full max-w-3xl mx-auto object-cover"
+                className="block w-auto max-w-4xl mx-auto object-cover"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-white py-20">
+      <section id="funciones" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] mb-4">
@@ -147,24 +147,27 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sección Cómo Funciona */}
-      <section className="bg-gray-50 py-32">
+      {/* App functionality section */}
+      <section id="beneficios" className="bg-gray-50 py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             {/* Grid del lado izquierdo */}
-            <div className="grid grid-cols-3 grid-rows-4 gap-5 h-[800px]">
-              {/* Panel Principal - Dashboard */}
-              <div className="col-span-2 row-span-2 bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
+            <div className="grid grid-cols-2 grid-rows-2 gap-8 h-[900px]">
+              {/* Panel Principal - Home */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 group border-l-4 border-green-500">
                 <div className="h-full flex flex-col">
+                  <div className="w-full h-52 bg-gradient-to-br from-green-50 to-green-100 rounded-lg mb-6 overflow-hidden">
+                    {/* Espacio para imagen de la app */}
+                  </div>
                   <h3 className="text-3xl font-semibold text-gray-900 font-[Poppins] mb-6">
-                    Dashboard Principal
+                    Home
                   </h3>
                   <p className="text-gray-600 font-[Inter] text-lg mb-6">
-                    Visualiza todas tus métricas clave en un solo lugar. Monitorea el engagement y el ROI de tu programa.
+                    Tu centro de control personal. Accede a todas tus recompensas y descubre nuevas experiencias.
                   </p>
                   <div className="mt-auto">
                     <span className="inline-flex items-center text-green-500 font-semibold text-lg group-hover:translate-x-2 transition-transform">
-                      Explorar Dashboard
+                      Explorar Home
                       <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -173,80 +176,99 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Panel Central - Centro de Control */}
-              <div className="row-span-4 col-start-3 bg-gradient-to-b from-green-500 to-green-600 rounded-2xl shadow-lg p-8 text-white relative overflow-hidden group">
-                <div className="absolute inset-0 bg-green-500/20 backdrop-blur-3xl transition-opacity group-hover:opacity-75"></div>
-                <div className="relative z-10 h-full flex flex-col">
-                  <h3 className="text-3xl font-semibold font-[Poppins] mb-8">
-                    Centro de Control
+              {/* Panel Misiones */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 group border-l-4 border-green-500">
+                <div className="h-full flex flex-col">
+                  <div className="w-full h-52 bg-gradient-to-br from-green-50 to-green-100 rounded-lg mb-6 overflow-hidden">
+                    {/* Espacio para imagen de la app */}
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 font-[Poppins] mb-6">
+                    Misiones
                   </h3>
-                  <ul className="space-y-8">
-                    <li className="flex items-center">
-                      <span className="bg-white/20 p-3 rounded-lg mr-4 text-xl">✨</span>
-                      <span className="text-lg">Configura recompensas</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="bg-white/20 p-3 rounded-lg mr-4 text-xl">📊</span>
-                      <span className="text-lg">Analiza resultados</span>
-                    </li>
-                    <li className="flex items-center">
-                      <span className="bg-white/20 p-3 rounded-lg mr-4 text-xl">🎯</span>
-                      <span className="text-lg">Personaliza objetivos</span>
-                    </li>
-                  </ul>
+                  <p className="text-gray-600 font-[Inter] text-lg mb-6">
+                    Completa desafíos diarios y semanales. Gana recompensas exclusivas y compite con amigos.
+                  </p>
                   <div className="mt-auto">
-                    <button className="w-full py-3 bg-white/10 rounded-xl hover:bg-white/20 transition-colors duration-300 text-lg font-semibold">
-                      Acceder al Centro
-                    </button>
+                    <span className="inline-flex items-center text-green-500 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+                      Ver Misiones
+                      <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Paneles Fila 3 */}
-              <div className="row-start-3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <h4 className="text-xl font-semibold text-gray-900 font-[Poppins] mb-3">Análisis</h4>
-                <p className="text-gray-600 font-[Inter] text-base">Datos en tiempo real</p>
+              {/* Panel Wallet */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 group border-l-4 border-green-500">
+                <div className="h-full flex flex-col">
+                  <div className="w-full h-52 bg-gradient-to-br from-green-50 to-green-100 rounded-lg mb-6 overflow-hidden">
+                    {/* Espacio para imagen de la app */}
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 font-[Poppins] mb-6">
+                    Wallet
+                  </h3>
+                  <p className="text-gray-600 font-[Inter] text-lg mb-6">
+                    Gestiona tus puntos y recompensas. Accede a tu historial y realiza canjes al instante.
+                  </p>
+                  <div className="mt-auto">
+                    <span className="inline-flex items-center text-green-500 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+                      Abrir Wallet
+                      <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <div className="row-start-3 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <h4 className="text-xl font-semibold text-gray-900 font-[Poppins] mb-3">Puntos</h4>
-                <p className="text-gray-600 font-[Inter] text-base">Sistema flexible</p>
-              </div>
-
-              {/* Paneles Fila 4 */}
-              <div className="row-start-4 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <h4 className="text-xl font-semibold text-gray-900 font-[Poppins] mb-3">Automatización</h4>
-                <p className="text-gray-600 font-[Inter] text-base">Reglas inteligentes</p>
-              </div>
-
-              <div className="row-start-4 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <h4 className="text-xl font-semibold text-gray-900 font-[Poppins] mb-3">Integración</h4>
-                <p className="text-gray-600 font-[Inter] text-base">APIs robustas</p>
+              {/* Panel Beneficios */}
+              <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl shadow-lg p-8 text-white relative overflow-hidden group">
+                <div className="absolute inset-0 bg-green-500/20 backdrop-blur-3xl transition-opacity group-hover:opacity-75"></div>
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="w-full h-52 bg-white/20 rounded-lg mb-6 backdrop-blur-xl">
+                    {/* Espacio para imagen de la app */}
+                  </div>
+                  <h3 className="text-3xl font-semibold font-[Poppins] mb-6">
+                    Beneficios Premium
+                  </h3>
+                  <p className="text-lg font-[Inter] mb-6 text-white/90">
+                    Descubre un mundo de beneficios exclusivos. Acceso prioritario a nuevos productos y eventos especiales.
+                  </p>
+                  <div className="mt-auto">
+                    <button className="w-full py-4 bg-white/10 rounded-xl hover:bg-white/20 transition-colors duration-300 text-lg font-semibold backdrop-blur-xl">
+                      Explorar Beneficios
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Contenido del lado derecho */}
             <div className="lg:sticky lg:top-32 space-y-8 max-w-xl">
               <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] leading-tight">
-                Diseñado para hacer crecer tu{' '}
-                <span className="text-green-500">programa de lealtad</span>
+                Una app diseñada para{' '}
+                <span className="relative">
+                  <span className="relative z-10 text-green-500">tu estilo</span>
+                  <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
+                </span>
               </h2>
               <p className="text-xl text-gray-600 font-[Inter] leading-relaxed">
-                Nuestra plataforma integra todas las herramientas que necesitas para crear y escalar tu programa de recompensas.
+                Descubre una experiencia única de recompensas, diseñada para hacer de cada visita un momento especial.
               </p>
               <div className="space-y-6">
                 {[
                   {
                     title: 'Interfaz Intuitiva',
-                    description: 'Diseñada para ser fácil de usar desde el primer día'
+                    description: 'Navega sin esfuerzo y encuentra todo lo que necesitas'
                   },
                   {
-                    title: 'Datos en Tiempo Real',
-                    description: 'Toma decisiones informadas con análisis instantáneos'
+                    title: 'Recompensas Instantáneas',
+                    description: 'Acumula y canjea puntos en tiempo real'
                   },
                   {
-                    title: 'Escalabilidad Total',
-                    description: 'Crece sin límites, nos adaptamos a tu negocio'
+                    title: 'Misiones Diarias',
+                    description: 'Completa desafíos y obtén beneficios exclusivos'
                   }
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start">
@@ -269,13 +291,17 @@ const Home = () => {
         </div>
       </section>
 
-            {/* Planes */}
-            <section className="bg-gray-50 py-32">
+      {/* Planes */}
+      <section id="planes" className="bg-gray-50 py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] mb-4">
-              Planes que se adaptan a tu negocio
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] leading-tight mb-5">
+                  Planes que se adaptan a{' '}
+                  <span className="relative">
+                    <span className="relative z-10 text-green-500">tu negocio</span>
+                    <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
+                  </span>
+                </h2>
             <p className="text-xl text-gray-600 font-[Inter]">
               Elige el plan perfecto para impulsar la lealtad de tus clientes
             </p>
@@ -377,22 +403,22 @@ const Home = () => {
       </section>
 
       {/* Reviews */}
-      <section className="bg-white py-32 overflow-hidden">
+      <section id="testimonios" className="bg-white py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Image */}
-            <div className="relative flex items-center justify-center">
+            <div className="relative w-full h-full">
               <img
                 src={peopleComment}
                 alt="Design Illustration"
-                className="block w-full max-w-3xl mx-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
 
             {/* Right side - Content */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] leading-tight">
+                <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] leading-tight">
                   Voces que{' '}
                   <span className="relative">
                     <span className="relative z-10 text-green-500">inspiran</span>
@@ -550,60 +576,85 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Preguntas Frecuentes */}
-      <section className="bg-white py-32">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] mb-4">
-              Preguntas Frecuentes
+      {/* FAQ Section */}
+      <section id="faq" className="bg-white py-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] mb-6">
+              Resolvemos tus{' '}
+              <span className="relative">
+                <span className="relative z-10 text-green-500">inquietudes</span>
+                <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 font-[Inter]">
-              Todo lo que necesitas saber sobre nuestra plataforma
+            <p className="text-xl text-gray-600 font-[Inter] max-w-2xl mx-auto">
+              Todo lo que necesitas saber para comenzar tu viaje con nosotros
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {[
               {
                 question: '¿Cómo funciona el programa de recompensas?',
-                answer: 'Nuestro programa permite a tus clientes acumular puntos por cada compra, los cuales pueden canjear por recompensas personalizadas. Tú defines las reglas y los premios.'
+                answer: 'Nuestro programa permite a tus clientes acumular puntos por cada compra, los cuales pueden canjear por recompensas personalizadas. Tú defines las reglas y los premios.',
               },
               {
                 question: '¿Cuánto tiempo toma la implementación?',
-                answer: 'La implementación básica toma menos de 1 hora. Para integraciones más complejas con sistemas existentes, nuestro equipo te guiará en el proceso que típicamente toma 1-2 días.'
+                answer: 'La implementación básica toma menos de 1 hora. Para integraciones más complejas con sistemas existentes, nuestro equipo te guiará en el proceso que típicamente toma 1-2 días.',
               },
               {
                 question: '¿Puedo personalizar las recompensas?',
-                answer: 'Sí, tienes control total sobre las recompensas. Puedes crear diferentes niveles, establecer múltiples tipos de beneficios y ajustar las reglas según tus necesidades.'
+                answer: 'Sí, tienes control total sobre las recompensas. Puedes crear diferentes niveles, establecer múltiples tipos de beneficios y ajustar las reglas según tus necesidades.',
               },
               {
                 question: '¿Qué tipo de soporte ofrecen?',
-                answer: 'Ofrecemos soporte por email 24/7 para todos los planes. Los planes Profesional y Empresarial incluyen soporte prioritario y acceso a un gerente de cuenta dedicado.'
+                answer: 'Ofrecemos soporte por email 24/7 para todos los planes. Los planes Profesional y Empresarial incluyen soporte prioritario y acceso a un gerente de cuenta dedicado.',
               },
               {
                 question: '¿Puedo cambiar de plan más adelante?',
-                answer: 'Sí, puedes actualizar o cambiar tu plan en cualquier momento. Los cambios se reflejarán en tu próximo ciclo de facturación.'
+                answer: 'Sí, puedes actualizar o cambiar tu plan en cualquier momento. Los cambios se reflejarán en tu próximo ciclo de facturación.',
               }
             ].map((faq, index) => (
               <div key={index} className="group">
                 <button
-                  className="w-full flex items-center justify-between p-6 bg-gray-50 rounded-xl text-left hover:bg-gray-100 transition-colors duration-300"
+                  className="w-full flex items-center justify-between p-8 bg-gray-50 rounded-2xl text-left transition-all duration-500 ease-in-out hover:bg-gradient-to-r hover:from-white hover:to-green-50 group-hover:shadow-lg"
                   onClick={() => {
+                    const allAnswers = document.querySelectorAll('[id^="answer-"]');
+                    allAnswers.forEach((answer, i) => {
+                      if (i !== index) {
+                        answer.classList.add('hidden', 'opacity-0', 'scale-95');
+                      }
+                    });
                     const answer = document.getElementById(`answer-${index}`);
                     if (answer) {
                       answer.classList.toggle('hidden');
+                      answer.classList.toggle('scale-95');
+                      answer.classList.toggle('opacity-0');
                     }
                   }}
                 >
-                  <span className="text-lg font-semibold text-gray-900 font-[Poppins]">
-                    {faq.question}
-                  </span>
-                  <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center space-x-4">
+                    <span className="text-2xl">{faq.icon}</span>
+                    <span className="text-xl font-semibold text-gray-900 font-[Poppins] group-hover:text-green-500 transition-colors duration-300">
+                      {faq.question}
+                    </span>
+                  </div>
+                  <svg 
+                    className="w-6 h-6 text-gray-400 transform transition-transform duration-500 ease-in-out group-hover:text-green-500 group-hover:rotate-180" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div id={`answer-${index}`} className="hidden text-base text-gray-600 font-[Inter]">
-                  {faq.answer}
+                <div 
+                  id={`answer-${index}`} 
+                  className="hidden opacity-0 scale-95 transform transition-all duration-300 ease-in-out overflow-hidden"
+                >
+                  <div className="p-8 text-lg text-gray-600 font-[Inter] bg-gradient-to-b from-white to-gray-50 rounded-2xl mt-2 border-l-4 border-green-500">
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             ))}
