@@ -46,19 +46,19 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1.7fr] gap-12 items-center">
             {/* Lado izquierdo - Texto principal */}
-            <div className="space-y-8">
-              <h1 className="text-6xl font-bold leading-tight text-gray-900 font-[Poppins] text-center">
+            <div className="space-y-8 text-center lg:text-left">
+              <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 font-[Poppins]">
                 Recompensas que{' '}
                 <span className="text-green-500">transforman</span> la lealtad
               </h1>
-              <p className="text-xl text-gray-600 font-[Inter] max-w-2xl">
+              <p className="text-lg sm:text-xl text-gray-600 font-[Inter] max-w-2xl mx-auto lg:mx-0">
                 Impulsa tu negocio con un programa de recompensas que verdaderamente conecta con tus clientes. Simple, efectivo y diseñado para el crecimiento.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-green-500 text-white rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg hover:shadow-green-500/25">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button className="px-6 sm:px-8 py-3 sm:py-4 bg-green-500 text-white rounded-lg text-base sm:text-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg hover:shadow-green-500/25">
                   Comienza Gratis
                 </button>
-                <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-md text-base font-semibold hover:bg-gray-200 transition-colors duration-300">
+                <button className="px-4 sm:px-6 py-2.5 sm:py-3 border border-gray-300 text-gray-700 rounded-md text-base font-semibold hover:bg-gray-200 transition-colors duration-300">
                   Ver Demo
                 </button>
               </div>
@@ -69,7 +69,7 @@ const Home = () => {
               <img
                 src={starAndGift}
                 alt="Dashboard de Recompensas"
-                className="block w-auto max-w-4xl mx-auto object-cover"
+                className="w-full h-auto max-w-[80%] sm:max-w-[70%] md:max-w-[60%] lg:max-w-4xl mx-auto object-contain transform lg:scale-110 transition-transform duration-300"
               />
             </div>
           </div>
@@ -80,7 +80,7 @@ const Home = () => {
       <section id="funciones" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 font-[Poppins] mb-4">
               Funciones que{' '}
               <span className="relative">
                 <span className="relative z-10 text-green-500">potencian</span>
@@ -150,9 +150,56 @@ const Home = () => {
       {/* App functionality section */}
       <section id="beneficios" className="bg-gray-50 py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            {/* Grid del lado izquierdo */}
-            <div className="grid grid-cols-2 grid-rows-2 gap-8 h-[900px]">
+          {/* Contenedor principal con orden flexible */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-20 lg:items-start">
+            {/* Contenido del título - Aparecerá primero en móvil */}
+            <div className="lg:sticky lg:top-32 space-y-8 max-w-xl mb-16 lg:mb-0 lg:order-2">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 font-[Poppins] leading-tight mb-4">
+                  Una app diseñada para{' '}
+                  <span className="relative">
+                    <span className="relative z-10 text-green-500">tu estilo</span>
+                    <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
+                  </span>
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-600 font-[Inter] leading-relaxed">
+                  Descubre una experiencia única de recompensas, diseñada para hacer de cada visita un momento especial.
+                </p>
+              </div>
+              <div className="space-y-6">
+                {[
+                  {
+                    title: 'Interfaz Intuitiva',
+                    description: 'Navega sin esfuerzo y encuentra todo lo que necesitas'
+                  },
+                  {
+                    title: 'Recompensas Instantáneas',
+                    description: 'Acumula y canjea puntos en tiempo real'
+                  },
+                  {
+                    title: 'Misiones Diarias',
+                    description: 'Completa desafíos y obtén beneficios exclusivos'
+                  }
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-green-500/10 flex items-center justify-center">
+                      <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div className="ml-4">
+                      <h4 className="text-lg font-semibold text-gray-900 font-[Poppins]">
+                        {feature.title}
+                      </h4>
+                      <p className="text-base text-gray-600 font-[Inter]">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Grid del lado izquierdo - Aparecerá segundo en móvil */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 h-auto lg:h-[900px] lg:order-1">
               {/* Panel Principal - Home */}
               <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 group border-l-4 border-green-500">
                 <div className="h-full flex flex-col">
@@ -243,50 +290,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            {/* Contenido del lado derecho */}
-            <div className="lg:sticky lg:top-32 space-y-8 max-w-xl">
-              <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] leading-tight">
-                Una app diseñada para{' '}
-                <span className="relative">
-                  <span className="relative z-10 text-green-500">tu estilo</span>
-                  <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 font-[Inter] leading-relaxed">
-                Descubre una experiencia única de recompensas, diseñada para hacer de cada visita un momento especial.
-              </p>
-              <div className="space-y-6">
-                {[
-                  {
-                    title: 'Interfaz Intuitiva',
-                    description: 'Navega sin esfuerzo y encuentra todo lo que necesitas'
-                  },
-                  {
-                    title: 'Recompensas Instantáneas',
-                    description: 'Acumula y canjea puntos en tiempo real'
-                  },
-                  {
-                    title: 'Misiones Diarias',
-                    description: 'Completa desafíos y obtén beneficios exclusivos'
-                  }
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 h-7 w-7 rounded-full bg-green-500/10 flex items-center justify-center">
-                      <svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-semibold text-gray-900 font-[Poppins]">
-                        {feature.title}
-                      </h4>
-                      <p className="text-base text-gray-600 font-[Inter]">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -295,7 +298,7 @@ const Home = () => {
       <section id="planes" className="bg-gray-50 py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] leading-tight mb-5">
+            <h2 className="text-4xl font-bold text-gray-900 font-[Poppins] leading-tight mt-15 mb-5">
                   Planes que se adaptan a{' '}
                   <span className="relative">
                     <span className="relative z-10 text-green-500">tu negocio</span>
@@ -402,7 +405,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Reviews */}
+      {/* Reviews Section*/}
       <section id="testimonios" className="bg-white py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -417,15 +420,15 @@ const Home = () => {
 
             {/* Right side - Content */}
             <div className="space-y-12">
-              <div>
-                <h2 className="text-5xl font-bold text-gray-900 font-[Poppins] leading-tight">
+              <div className="text-center lg:text-left">
+                <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 font-[Poppins] leading-tight mb-4">
                   Voces que{' '}
                   <span className="relative">
                     <span className="relative z-10 text-green-500">inspiran</span>
                     <span className="absolute inset-0 bg-green-500/10 blur-lg"></span>
                   </span>
                 </h2>
-                <p className="mt-4 text-lg text-gray-500 font-[Inter] max-w-xl">
+                <p className="text-lg sm:text-xl text-gray-500 font-[Inter] max-w-xl mx-auto lg:mx-0">
                   Descubre cómo empresas de todos los tamaños están revolucionando la forma de conectar con sus clientes a través de nuestro programa.
                 </p>
               </div>
