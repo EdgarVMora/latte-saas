@@ -98,25 +98,34 @@ const Navbar = () => {
       </div>
 
       {/* Menú móvil */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${
-        isOpen 
-          ? 'opacity-100 translate-y-0 h-auto' 
-          : 'opacity-0 -translate-y-4 h-0'
-      }`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md">
+      <div 
+        className={`md:hidden fixed w-full bg-white/90 backdrop-blur-md transition-all duration-300 ease-in-out ${
+          isOpen 
+            ? 'opacity-100 visible translate-y-0' 
+            : 'opacity-0 invisible -translate-y-full'
+        }`}
+        style={{
+          top: '64px', // altura del navbar
+          maxHeight: 'calc(100vh - 64px)',
+          overflowY: 'auto'
+        }}
+      >
+        <div className="px-4 py-3 space-y-2">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="block px-3 py-2 rounded-lg text-base font-medium text-gray-600 hover:text-green-500 hover:bg-green-50 transition-all duration-200"
+              className="block px-4 py-3 rounded-lg text-base font-medium text-gray-600 hover:text-green-500 hover:bg-green-50 transition-all duration-200"
             >
               {item.name}
             </a>
           ))}
-          <button className="w-full mt-4 px-4 py-2 bg-green-500 text-white rounded-lg text-base font-medium transform transition-all duration-300 hover:bg-green-600 active:scale-95">
-            Comenzar
-          </button>
+          <div className="pt-2">
+            <button className="w-full px-4 py-3 bg-green-500 text-white rounded-lg text-base font-medium transform transition-all duration-300 hover:bg-green-600 active:scale-95">
+              Comenzar
+            </button>
+          </div>
         </div>
       </div>
     </nav>
